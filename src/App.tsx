@@ -76,10 +76,10 @@ function App() {
     return (
         <div className="App">
             <button onClick={requestNotificationPermission}>
-                requestNotificationPermission
+                requestNotificationPermissions
             </button>
 
-            <button onClick={handleInstallClick}>Install App</button>
+            <button onClick={handleInstallClick}>Install Apps</button>
 
             <p className='token'>
                 {token}
