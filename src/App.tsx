@@ -5,6 +5,7 @@ import  {firebaseApp} from "./firebase";
 
 function App() {
     const [notificationPermission, setNotificationPermission] = useState<NotificationPermission | null>(null);
+    const [token, setToken] = useState('');
 
     useEffect(() => {
         const messaging = getMessaging(firebaseApp);
@@ -24,7 +25,7 @@ function App() {
 
                 const t = await getToken(messaging);
 
-                alert(t)
+                setToken(t)
                 setNotificationPermission(permission);
             } else {
                 alert('permissiooooon')
@@ -40,6 +41,7 @@ function App() {
             <button onClick={requestNotificationPermission}>
                 requestNotificationPermission
             </button>
+            {token}
         </div>);
 }
 
