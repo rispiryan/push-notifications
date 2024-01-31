@@ -32,7 +32,7 @@ function App() {
     };
 
     const handleInstallClick = () => {
-        console.log(deferredPrompt)
+        alert(deferredPrompt)
 
         if (deferredPrompt) {
             // @ts-ignore
