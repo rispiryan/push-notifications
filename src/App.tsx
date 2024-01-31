@@ -5,7 +5,14 @@ import  {firebaseApp} from "./firebase";
 
 function App() {
     const [token, setToken] = useState('');
-    const [deferredPrompt, setDdeferredPrompt] = useState()
+
+    useEffect(() => {
+        const messaging = getMessaging(firebaseApp);
+
+
+        console.log(firebaseApp, messaging)
+
+    },[])
 
     const requestNotificationPermission = async () => {
         try {
@@ -31,57 +38,11 @@ function App() {
         }
     };
 
-    const handleInstallClick = () => {
-        alert(deferredPrompt)
-        // @ts-ignore
-        alert(window.deferredPrompt)
-
-        if (deferredPrompt) {
-            // @ts-ignore
-            deferredPrompt.prompt();
-
-            // @ts-ignore
-            deferredPrompt.userChoice.then((choiceResult) => {
-                if (choiceResult.outcome === 'accepted') {
-                    console.log('User accepted the A2HS prompt');
-                } else {
-                    console.log('User dismissed the A2HS prompt');
-                }
-
-                // @ts-ignore
-                setDdeferredPrompt(null)
-            });
-        }
-    };
-
-    useEffect(() => {
-        const handler = (event: any) => {
-            // Prevent the mini-infobar from appearing on mobile.
-            event.preventDefault();
-            console.log('👍', 'beforeinstallprompt', event);
-            // Stash the event so it can be triggered later.
-
-            console.log(event)
-            setDdeferredPrompt(event)
-            // Remove the 'hidden' class from the install button container.
-        }
-        window.addEventListener('beforeinstallprompt', handler);
-        window.addEventListener('appinstalled', (event) => {
-            alert('appinstalled');
-            // Clear the deferredPrompt so it can be garbage collected
-        });
-        return () => {
-            window.removeEventListener('beforeinstallprompt', handler)
-        }
-    }, [])
-
     return (
         <div className="App">
             <button onClick={requestNotificationPermission}>
-                requestNotificationPermissions
+                requestNotificationPermission
             </button>
-
-            <button onClick={handleInstallClick}>Install Apps</button>
 
             <p className='token'>
                 {token}
