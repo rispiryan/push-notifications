@@ -32,7 +32,7 @@ function App() {
             }
 
         } catch (error) {
-            console.error('Error requesting notification permission:', error);
+            alert('Error requesting notification permission:');
         }
     };
 
