@@ -34,8 +34,8 @@ self.addEventListener('push', event => {
     console.log('push', event?.data?.json()?.notification)
 
     const options = {
-        body: json.notification.body,
+        body: json?.notification?.body,
     };
 
-    event.waitUntil(self.registration.showNotification(json.notification.title, options));
+    event.waitUntil(self.registration.showNotification(json?.notification?.title, options));
 });
