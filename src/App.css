@@ -9,7 +9,7 @@
 }
 
 .token {
-  text-wrap: wrap;
+  text-wrap: nowrap;
   max-width: 200px;
 }
 
