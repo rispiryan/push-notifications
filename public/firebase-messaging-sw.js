@@ -28,3 +28,13 @@ messaging.onBackgroundMessage(function(payload) {
 
     self.registration.showNotification(notificationTitle, notificationOptions);
 });
+
+self.addEventListener('push', event => {
+    console.log('push', event)
+
+    const options = {
+        body: event?.data?.text?.(),
+    };
+
+    event.waitUntil(self.registration.showNotification('Your App Name', options));
+});
