@@ -42,7 +42,9 @@ function App() {
             <button onClick={requestNotificationPermission}>
                 requestNotificationPermission
             </button>
-            {token}
+            <p className='token'>
+                {token}
+            </p>
         </div>);
 }
 

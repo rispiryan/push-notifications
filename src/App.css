@@ -8,6 +8,11 @@
   flex-direction: column;
 }
 
+.token {
+  text-wrap: wrap;
+  max-width: 200px;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
