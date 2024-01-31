@@ -13,7 +13,7 @@ root.render(
     <App />
 );
 
-serviceWorkerRegistration.register();
+// serviceWorkerRegistration.register();
 
 
 reportWebVitals(sendToVercelAnalytics);
