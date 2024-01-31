@@ -28,10 +28,13 @@ function App() {
                 setToken(t)
                 setNotificationPermission(permission);
             } else {
+                setToken('permissiooooon')
+
                 alert('permissiooooon')
             }
 
         } catch (error) {
+            setToken('Error')
             alert('Error requesting notification permission:');
             console.log('Error requesting notification permission:', error);
         }
