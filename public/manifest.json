@@ -25,11 +25,15 @@
   "url_handlers": [
     {
       "origin": "https://push-notifications-gray.vercel.app"
-    },{
+    },
+    {
       "origin": "https://push-notifications-gray.vercel.app/"
-    },{
-      "origin": "my-pwa://",
-      "login_required": false
+    }
+  ],
+  "related_applications": [
+    {
+      "platform": "web",
+      "url": "https://push-notifications-gray.vercel.app"
     }
   ]
 }
