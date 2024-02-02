@@ -46,8 +46,8 @@ function App() {
             <button onClick={requestNotificationPermission}>
                 requestNotificationPermissions
             </button>
-            <a href={'https://push-notifications-gray.vercel.app'} target='_blank'>
-                open pwa
+            <a href={'https://push-notifications-gray.vercel.app/'} target='_blank'>
+                open my pwa
             </a>
 
             <p className='token'>
