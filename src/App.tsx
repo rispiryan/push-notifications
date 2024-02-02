@@ -46,6 +46,11 @@ function App() {
             <button onClick={requestNotificationPermission}>
                 requestNotificationPermissions
             </button>
+            <button onClick={() => {
+                window.location.href = 'my-pwa://';
+            }}>
+                open pwa
+            </button>
 
             <p className='token'>
                 {token}

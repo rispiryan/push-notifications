@@ -27,6 +27,9 @@
       "origin": "https://push-notifications-gray.vercel.app"
     },{
       "origin": "https://push-notifications-gray.vercel.app/"
+    },{
+      "origin": "my-pwa://",
+      "login_required": false
     }
   ]
 }
