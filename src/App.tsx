@@ -16,24 +16,17 @@ function App() {
 
     const requestNotificationPermission = async () => {
         try {
-            console.log(JSON.stringify(Notification))
-
             const permission = await Notification.requestPermission();
-
-            console.log('permission',permission)
 
             if (permission === 'granted') {
                 const messaging = getMessaging(firebaseApp);
 
-                const t = await getToken(messaging);
+                const generatedToken = await getToken(messaging);
 
-                setToken(t)
+                setToken(generatedToken)
             } else {
-                setToken('permissiooooon')
-
-                alert('permissiooooon')
+                console.error('Please grant access')
             }
-
         } catch (error) {
             setToken('Error')
             alert('Error requesting notification permission:');
@@ -49,10 +42,6 @@ function App() {
             <a href={'https://push-notifications-gray.vercel.app/'} target='_blank'>
                 open my pwa
             </a>
-
-            <p className='token'>
-                {token}
-            </p>
         </div>);
 }
 

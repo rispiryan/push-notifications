@@ -1,7 +1,5 @@
 import { initializeApp } from "firebase/app";
 
-import { getAnalytics } from "firebase/analytics";
-
 const firebaseConfig = {
     apiKey: "AIzaSyC5cWyEjgFYSQ4kn8IiIBlBShe0zEf5lSw",
     authDomain: "push-notifications-2fd58.firebaseapp.com",
@@ -13,4 +11,3 @@ const firebaseConfig = {
 };
 
 export const firebaseApp = initializeApp(firebaseConfig);
-const analytics = getAnalytics(firebaseApp);

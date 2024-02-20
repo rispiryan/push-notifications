@@ -1,6 +1,5 @@
 self.addEventListener('push', event => {
     const json = event?.data?.json();
-    console.log('push', event?.data?.json()?.notification)
 
     const options = {
         body: json?.notification?.body,
